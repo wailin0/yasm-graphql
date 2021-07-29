@@ -26,6 +26,10 @@ mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    debug: true,
+    tracing: true,
+    introspection: true,
+    playground: true,
     context: async ({ req }) => {
         const auth = req ? req.headers.authorization : null
         if (auth && auth.toLowerCase().startsWith('bearer ')) {
