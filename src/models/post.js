@@ -7,7 +7,7 @@ const schema = new mongoose.Schema({
     },
     photoURL: {
         type: String,
-        default: "https://source.unsplash.com/random"
+        default: ""
     },
     createdAt: {
         type: Date,
